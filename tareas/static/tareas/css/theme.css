@@ -1,0 +1,225 @@
+/*
+  Tema visual: "cuaderno de proyectos".
+  Idea: la app se siente como una libreta/ledger donde cada proyecto es
+  una entrada y cada tarea una línea con su estado marcado al margen,
+  en vez de un panel SaaS genérico. Paleta fría de papel + tinta navy,
+  con un solo acento (latón) reservado para lo interactivo/activo.
+*/
+
+:root {
+    --ink: #1b2430;
+    --ink-muted: #5b6472;
+    --paper: #f5f6f3;
+    --surface: #ffffff;
+    --navy: #26314d;
+    --navy-dark: #1b2438;
+    --brass: #b8863c;
+    --brass-dark: #8f6526;
+    --pine: #3f6653;
+    --rust: #a6493a;
+    --line: #e1e2dc;
+}
+
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+}
+
+a {
+    color: var(--navy);
+}
+a:hover {
+    color: var(--brass-dark);
+}
+
+/* ---------- Navbar ---------- */
+.site-navbar {
+    background-color: var(--surface);
+    border-bottom: 2px solid var(--brass);
+}
+.site-navbar .navbar-brand {
+    font-size: 1.4rem;
+}
+.site-navbar .navbar-text {
+    color: var(--ink-muted);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--navy);
+    --bs-btn-border-color: var(--navy);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--navy-dark);
+    --bs-btn-hover-border-color: var(--navy-dark);
+    --bs-btn-active-bg: var(--navy-dark);
+    --bs-btn-active-border-color: var(--navy-dark);
+    --bs-btn-disabled-bg: var(--navy);
+    --bs-btn-disabled-border-color: var(--navy);
+    --bs-btn-focus-shadow-rgb: 38, 49, 77;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--navy);
+    --bs-btn-border-color: var(--navy);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--navy);
+    --bs-btn-hover-border-color: var(--navy);
+    --bs-btn-active-bg: var(--navy);
+    --bs-btn-active-border-color: var(--navy);
+    --bs-btn-focus-shadow-rgb: 38, 49, 77;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--ink-muted);
+    --bs-btn-border-color: var(--line);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--ink-muted);
+    --bs-btn-hover-border-color: var(--ink-muted);
+}
+
+.btn-outline-danger {
+    --bs-btn-color: var(--rust);
+    --bs-btn-border-color: var(--rust);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--rust);
+    --bs-btn-hover-border-color: var(--rust);
+}
+
+.btn-danger {
+    --bs-btn-bg: var(--rust);
+    --bs-btn-border-color: var(--rust);
+    --bs-btn-hover-bg: #8d3c2f;
+    --bs-btn-hover-border-color: #8d3c2f;
+    --bs-btn-active-bg: #8d3c2f;
+    --bs-btn-active-border-color: #8d3c2f;
+}
+
+.btn-outline-navy-inverse {
+    --bs-btn-color: var(--navy);
+    --bs-btn-border-color: var(--navy);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--navy);
+    --bs-btn-hover-border-color: var(--navy);
+}
+
+.btn-brass {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--brass);
+    --bs-btn-border-color: var(--brass);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--brass-dark);
+    --bs-btn-hover-border-color: var(--brass-dark);
+}
+
+/* ---------- Tarjetas de proyecto ---------- */
+.card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.project-card {
+    border-left: 3px solid var(--brass);
+    transition: border-color 0.15s ease;
+}
+.project-card:hover {
+    border-color: var(--line);
+    border-left-color: var(--brass-dark);
+}
+
+/* ---------- Filas de tarea (el margen indica el estado) ---------- */
+.task-row {
+    border-left: 3px solid var(--line);
+    background-color: var(--surface);
+}
+.task-row.is-pendiente {
+    border-left-color: var(--ink-muted);
+}
+.task-row.is-en_proceso {
+    border-left-color: var(--brass);
+}
+.task-row.is-finalizada {
+    border-left-color: var(--pine);
+}
+
+/* ---------- Insignias de estado propias (no los colores por defecto de Bootstrap) ---------- */
+.badge-estado {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 0.3em 0.65em;
+    border-radius: 4px;
+}
+.badge-pendiente {
+    background-color: var(--line);
+    color: var(--ink-muted);
+}
+.badge-en_proceso {
+    background-color: rgba(184, 134, 60, 0.15);
+    color: var(--brass-dark);
+}
+.badge-finalizada {
+    background-color: rgba(63, 102, 83, 0.15);
+    color: var(--pine);
+}
+
+/* ---------- Panel para formularios (login, registro, proyecto/tarea) ---------- */
+.surface-panel {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2rem;
+}
+
+/* ---------- Avisos (confirmar eliminación) ---------- */
+.notice {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--rust);
+    background-color: rgba(166, 73, 58, 0.06);
+    padding: 0.9rem 1rem;
+    border-radius: 4px;
+    color: var(--ink);
+}
+
+/* ---------- Formularios ---------- */
+form p {
+    margin-bottom: 1rem;
+}
+label {
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    display: inline-block;
+}
+.form-control,
+.form-select {
+    border-color: var(--line);
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 0.2rem rgba(38, 49, 77, 0.15);
+}
+
+/* ---------- Estado vacío ---------- */
+.empty-state {
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: var(--ink-muted);
+}

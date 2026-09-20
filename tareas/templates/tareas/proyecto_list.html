@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Mis proyectos{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Mis proyectos</h1>
+    <a href="{% url 'proyecto_create' %}" class="btn btn-primary">Nuevo proyecto</a>
+</div>
+
+{% if proyectos %}
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        {% for proyecto in proyectos %}
+            <div class="col">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ proyecto.nombre }}</h5>
+                        <p class="card-text text-muted">{{ proyecto.descripcion|default:"Sin descripción" }}</p>
+                        <span class="badge-estado badge-pendiente">{{ proyecto.tareas.count }} tarea{{ proyecto.tareas.count|pluralize }}</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="{% url 'proyecto_detail' proyecto.pk %}" class="btn btn-outline-primary btn-sm">Ver detalle</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% else %}
+
+    <div class="empty-state">
+        <p class="mb-2">Todavía no tienes proyectos registrados.</p>
+        <a href="{% url 'proyecto_create' %}" class="btn btn-primary btn-sm">Crear tu primer proyecto</a>
+    </div>
+
+{% endif %}
+
+{% endblock %}
