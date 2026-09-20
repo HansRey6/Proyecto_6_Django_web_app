@@ -4,6 +4,20 @@ Aplicación web construida con Django que permite a los usuarios registrarse,
 autenticarse y gestionar sus propios proyectos y las tareas asociadas a cada
 uno.
 
+## Capturas de pantalla 
+
+<img width="1347" height="606" alt="1" src="https://github.com/user-attachments/assets/c5874e05-69a2-4ddd-b0aa-8995196aef0a" />
+
+<img width="1350" height="607" alt="22" src="https://github.com/user-attachments/assets/f464cb87-1f16-45fe-a41e-66b7fa3f3e02" />
+
+<img width="1344" height="592" alt="333" src="https://github.com/user-attachments/assets/eefa28e2-022e-4d54-827c-62f8644c1f0b" />
+
+<img width="1341" height="602" alt="44" src="https://github.com/user-attachments/assets/43768c33-33d9-44e6-85a9-5b8536e5830a" />
+
+## Video de demostración
+
+[Ver video](https://drive.google.com/file/d/17mlMDWL18f2taj6S9QWpcRuZl4X5VQGu/view?usp=sharing)
+
 ## Funcionalidades
 
 - Registro de usuarios y autenticación (`django.contrib.auth`).
