@@ -8,11 +8,11 @@ uno.
 
 <img width="1347" height="606" alt="1" src="https://github.com/user-attachments/assets/c5874e05-69a2-4ddd-b0aa-8995196aef0a" />
 
-<img width="1350" height="607" alt="22" src="https://github.com/user-attachments/assets/f464cb87-1f16-45fe-a41e-66b7fa3f3e02" />
+<img width="1344" height="608" alt="gdsg" src="https://github.com/user-attachments/assets/db30adc1-e7cf-4160-ab21-a04f98611bab" />
+
+<img width="1320" height="566" alt="segrdhfgjh," src="https://github.com/user-attachments/assets/52a02d63-9cb3-45ba-8283-4b1a9ae82b37" />
 
 <img width="1344" height="592" alt="333" src="https://github.com/user-attachments/assets/eefa28e2-022e-4d54-827c-62f8644c1f0b" />
-
-<img width="1341" height="602" alt="44" src="https://github.com/user-attachments/assets/43768c33-33d9-44e6-85a9-5b8536e5830a" />
 
 ## Video de demostración
 
